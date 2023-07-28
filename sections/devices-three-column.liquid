@@ -1,0 +1,60 @@
+<article class="compare block-nobg">
+    <div class="compare__int">
+        <div class="compare__items">
+            <div class="{%- if product.handle == 'kardiamobile' -%}compare__item compare__item--featured{%- else -%}compare__item px-s9{%- endif -%}">
+                <picture class="image__wrapper  compare__image-wrapper">
+                    <a href="/products/kardiamobile"><img width="400" src="{{ 'devices-3-column-kardiamobile.png' | asset_url }}" alt="" class="compare__image lazy-img ls-is-cached lazyloaded"></a>
+                </picture>
+                <p class="compare__heading faux-h5 text-primary-500 mt-s8">
+                    <a href="/products/kardiamobile">KardiaMobile®</a>
+                </p>
+                <p>1-lead EKG</p>
+                <p>Detects AFib, Bradycardia, Tachycardia, and Normal Sinus Rhythm</p>
+                <p>More arrhythmia detections available with a KardiaCare membership</p>
+                <p>Audio connection, no WiFi required</p>
+                {%- if product.handle == 'kardiamobile' -%}
+                    <div class="compare__links text-button-container global__btn">
+                        <button onclick="initKcUpsell()" class="btn">Add to Cart</button>
+                    </div>
+                {%- endif -%}
+            </div>
+            <div class="{%- if product.handle == 'kardiamobile6l' -%}compare__item compare__item--featured{%- else -%}compare__item px-s9{%- endif -%}">
+                <picture class="image__wrapper  compare__image-wrapper">
+                    <a href="/products/kardiamobile6l"><img width="400" src="{{ 'devices-3-column-6l.png' | asset_url }}" alt="" class="compare__image lazy-img ls-is-cached lazyloaded"></a>
+                </picture>
+                <p class="compare__heading faux-h5 text-primary-500 mt-s8">
+                    <a href="/products/kardiamobile6l">KardiaMobile® 6L</a>
+                </p>
+                <p>6-lead EKG</p>
+                <p>Detects AFib, Bradycardia, Tachycardia, and Normal Sinus Rhythm</p>
+                <p>More arrhythmia detections available with a KardiaCare membership</p>
+                <p>Bluetooth enabled, no WiFi required</p>
+                <p>The only 6-lead personal EKG, giving you a more detailed view of your heart rhythm<br></p>
+                {%- if product.handle == 'kardiamobile6l' -%}
+                    <div class="compare__links text-button-container global__btn">
+                        <button onclick="initKcUpsell()" class="btn">Add to Cart</button>
+                    </div>
+                {%- endif -%}
+            </div>
+            <div class="{%- if product.handle == 'kardiamobile-card' -%}compare__item compare__item--featured{%- else -%}compare__item px-s9{%- endif -%}">
+                <picture class="image__wrapper  compare__image-wrapper">
+                    <a href="/products/kardiamobile-card"><img width="400" src="{{ 'devices-3-column-card.png' | asset_url }}" alt="" class="compare__image lazy-img ls-is-cached lazyloaded"></a>
+                </picture>
+                <p class="compare__heading faux-h5 text-primary-500 mt-s8">
+                    <a href="/products/kardiamobile-card">KardiaMobile® Card</a>
+                </p>
+                <p>1-lead EKG</p>
+                <p>Detects AFib, Bradycardia, Tachycardia, and Normal Sinus Rhythm</p>
+                <p>More arrhythmia detections available with a KardiaCare membership</p>
+                <p>Bluetooth enabled, no WiFi required</p>
+                <p>As thin and light as a credit card, easily fits in your wallet</p>
+                <p>Tested for durability<strong><br></strong></p>
+                {%- if product.handle == 'kardiamobile-card' -%}
+                <div class="compare__links text-button-container global__btn">
+                    <button onclick="initKcUpsell()" class="btn">Add to Cart</button>
+                </div>
+                {%- endif -%}
+            </div>
+        </div>
+    </div>
+</article>

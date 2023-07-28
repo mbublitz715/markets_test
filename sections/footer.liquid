@@ -1,0 +1,426 @@
+{% comment %}theme-check-disable UndefinedObject{% endcomment %}
+{{ 'section-footer.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="{{ 'component-newsletter.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-list-payment.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-list-social.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-rte.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'disclosure.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<noscript>{{ 'component-newsletter.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-list-menu.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-list-payment.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-list-social.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'disclosure.css' | asset_url | stylesheet_tag }}</noscript>
+
+{%- style -%}
+
+.footer {
+    margin-top: {{section.settings.margin_top | times: 0.75 | round: 0}}px;
+}
+
+.section-{{section.id}}-padding {
+    padding-top: {{section.settings.padding_top | times: 0.75 | round: 0}}px;
+    padding-bottom: {{section.settings.padding_bottom | times: 0.75 | round: 0}}px;
+}
+
+@media screen and (min-width: 750px) {
+    .footer {
+        margin-top: {{section.settings.margin_top}}px;
+    }
+
+    .section-{{section.id}}-padding {
+        padding-top: {{section.settings.padding_top}}px;
+        padding-bottom: {{section.settings.padding_bottom}}px;
+    }
+}
+.bottom-banner-left {
+    width: calc(400px + var(--push-size));
+}
+
+{%- endstyle -%}
+
+{% assign baseURL = "https://kardia.steadfa.st" %}
+
+<footer class="main-footer main-fade-in">
+    <div class="overflow-hidden">
+        <div class="footer__content">
+            <div class="footer__logo-container">
+                <a href="https://www.kardia.com" aria-label="return home" class="footer-logo">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="xMinYMid" viewBox="0 0 340 95" role="presentation">
+						<path fill="#6386C4" d="M51.11 54.568h10.866s-4.203-10.834-10.061-24.475C46.056 16.45 42.256 8.024 42.256 8.024c-1.61-4.013-3.22-5.858-4.83-6.821l-4.673 9.228a997.846 997.846 0 0 1 6.686 15.247c5.232 12.238 11.67 28.889 11.67 28.889Z"></path>
+						<path fill="#95AEDA" d="M14.89 54.568H4.024s4.203-10.833 10.061-24.475c5.859-13.642 9.659-22.068 9.659-22.068 1.61-4.013 3.22-5.858 4.83-6.821 2.011-1.605 6.438-1.605 8.853 0 0 0-5.634 12.237-10.866 24.475-5.232 12.238-11.67 28.889-11.67 28.889Z"></path>
+						<path fill="#164F8C" d="M4.024 54.568 0 65h11.268l3.622-10.432H4.024Zm57.952 0L66 65H54.732L51.11 54.568h10.866Z"></path>
+						<path fill="#6386C4" d="M122.567 21.069h-8.795l-20.69 23.29V21.07H86v43.837h7.082V53.792l6.59-7.337 14.606 18.335.104.116h8.743L104.316 41.28l18.251-20.21Zm32.299 0h-10.04l-16.448 43.837h7.303l3.71-9.898h20.651l3.645 9.872h7.303l-16.046-43.59-.078-.22Zm2.958 27.47h-16.202l8.185-21.764 8.017 21.763Zm57.1-13.134a14.178 14.178 0 0 0-1.076-5.53 14.233 14.233 0 0 0-3.143-4.68 14.278 14.278 0 0 0-10.27-4.126h-18.938v43.837h7.017V49.237h9.703l9.833 15.67h7.692l-10.378-16.55a13.462 13.462 0 0 0 6.939-4.89 13.404 13.404 0 0 0 2.621-8.062Zm-6.836-.194c0 4.568-3.346 7.764-8.146 7.764h-11.428V27.448h11.921a7.385 7.385 0 0 1 5.551 2.19 7.343 7.343 0 0 1 2.102 5.573Zm33.389-14.207h-15.228v43.993h15.228a22.64 22.64 0 0 0 16.228-6.47A21.511 21.511 0 0 0 263.944 43a21.94 21.94 0 0 0-1.717-8.514 21.993 21.993 0 0 0-4.888-7.188 22.062 22.062 0 0 0-7.295-4.74 22.106 22.106 0 0 0-8.567-1.554Zm0 37.33h-8.146V27.641h8.146c4.08 0 7.994 1.617 10.879 4.494a15.327 15.327 0 0 1 4.506 10.851c0 4.07-1.621 7.974-4.506 10.852a15.406 15.406 0 0 1-10.879 4.494Zm39.81-37.265h-6.836v43.837h6.836V21.07Zm36.956.22-.078-.22h-10.04l-16.448 43.837h7.303l3.71-9.872h20.651l3.645 9.872h7.316L318.243 21.29Zm2.88 27.301h-16.202l8.185-21.764 8.017 21.764Zm8.859-27.03h-1.375v-.491h3.36v.491h-1.388v4.037h-.597V21.56Zm6.305 2.045c0-.634-.065-1.385-.065-1.954-.156.53-.351 1.1-.571 1.72l-.804 2.2h-.441l-.74-2.16a18.557 18.557 0 0 1-.519-1.76c0 .57 0 1.294-.09 2.005l-.13 1.941h-.558l.324-4.528h.766l.778 2.186c.181.5.332 1.01.454 1.527.117-.453.272-.957.48-1.527l.804-2.186h.753l.272 4.528h-.571l-.142-1.992Z"></path>
+						<path fill="#195C5D" d="M190 91.814V82h1.438v3.487a3.162 3.162 0 0 1 1.156-.913 3.28 3.28 0 0 1 1.461-.302 4.086 4.086 0 0 1 2.793 1.156A3.8 3.8 0 0 1 198 88.142a3.735 3.735 0 0 1-1.093 2.682A4.013 4.013 0 0 1 194.178 92a3.447 3.447 0 0 1-1.524-.305 3.324 3.324 0 0 1-1.216-.937v1.057H190Zm6.589-3.672a2.42 2.42 0 0 0-.141-1.015 2.507 2.507 0 0 0-.549-.876 2.61 2.61 0 0 0-.867-.592 2.683 2.683 0 0 0-2.078 0 2.61 2.61 0 0 0-.867.592c-.243.252-.43.55-.549.876a2.42 2.42 0 0 0-.141 1.015c-.026.344.022.69.141 1.014.119.326.306.624.549.877.244.252.539.454.867.591a2.68 2.68 0 0 0 2.945-.591c.243-.253.43-.551.549-.877a2.42 2.42 0 0 0 .141-1.014Zm4.04 6.858 1.162-3.335-2.79-7.084h1.5L202.499 90l2-5.423h1.499L201.999 95h-1.37Zm29.531-6.216c-.419-1.024-.892-2.096-1.382-3.28-.491-1.185-1.003-2.313-1.498-3.411a458.92 458.92 0 0 0-1.542-3.385 2.69 2.69 0 0 0-.892-1.162 2.201 2.201 0 0 0-1.159-.329c-.411 0-.813.114-1.159.329-.4.302-.709.704-.891 1.162a304.237 304.237 0 0 0-1.538 3.385 215.158 215.158 0 0 0-2.884 6.691 127.412 127.412 0 0 0-1.191 2.978l-.026.074h2.674v-.043c.152-.433.357-.96.602-1.59.187-.48.406-1.034.678-1.695l.026-.074c.281-.7 1.476-3.596 1.708-4.136.231-.54.477-1.111.722-1.656.245-.545.472-1.059.7-1.547.227-.489.396-.865.566-1.202.174.359.361.76.566 1.201.205.441.446 1.008.7 1.548.254.54.486 1.102.722 1.656.236.553 1.426 3.457 1.707 4.136l.031.074c.268.661.491 1.214.678 1.694.245.631.446 1.163.602 1.59v.044h2.674l-.026-.073a71.45 71.45 0 0 0-1.168-2.979Zm7.234-11.575h-2.407v14.627h9.776V89.64h-7.369V77.21Zm13.329 0h-2.345v14.627h2.345V77.209Zm10.667 12.444-4.502-12.375-.027-.07h-2.532l5.327 14.628h3.446l5.314-14.485.053-.142h-2.487l-4.592 12.444Zm10.685 2.183h10.712V89.64h-8.3v-4.046h7.453v-2.148h-7.453V79.4h8.3v-2.192h-10.712v14.628Zm21.892-12.583h.036a5.06 5.06 0 0 1 2.739.793 4.837 4.837 0 0 1 1.83 2.13l.04.081 2.318-.635-.053-.112a7.326 7.326 0 0 0-2.981-3.418 7.672 7.672 0 0 0-4.481-1.074 7.775 7.775 0 0 0-4.66 2.026 7.349 7.349 0 0 0-2.312 4.415 7.344 7.344 0 0 0 .26 3.182 7.507 7.507 0 0 0 1.59 2.796 7.562 7.562 0 0 0 2.577 1.846c.984.43 2.053.651 3.133.648a7.545 7.545 0 0 0 4.134-1.217 7.21 7.21 0 0 0 2.722-3.252l.049-.113-2.34-.614-.036.082a4.708 4.708 0 0 1-1.811 2.106 4.928 4.928 0 0 1-2.718.756c-2.973 0-5.216-2.239-5.216-5.187a5.17 5.17 0 0 1 .391-2.06 5.3 5.3 0 0 1 1.183-1.752 5.075 5.075 0 0 1 1.656-1.063 5.204 5.204 0 0 1 1.95-.364Zm18.197-2.191a7.877 7.877 0 0 0-4.299 1.225 7.526 7.526 0 0 0-2.869 3.338 7.262 7.262 0 0 0-.467 4.322 7.402 7.402 0 0 0 2.093 3.842 7.78 7.78 0 0 0 3.944 2.063 7.93 7.93 0 0 0 4.461-.415 7.66 7.66 0 0 0 3.467-2.752 7.308 7.308 0 0 0 1.301-4.158 7.33 7.33 0 0 0-2.226-5.261 7.8 7.8 0 0 0-5.405-2.204Zm5.197 7.465c0 2.943-2.282 5.247-5.197 5.247a5.207 5.207 0 0 1-2.102-.423 5.07 5.07 0 0 1-1.732-1.228 5.418 5.418 0 0 1-1.138-1.99 5.293 5.293 0 0 1-.199-2.268 5.135 5.135 0 0 1 1.697-3.254 5.443 5.443 0 0 1 3.487-1.367h.08c2.862.057 5.104 2.378 5.104 5.283Zm17.475-2.537a4.64 4.64 0 0 0-.372-1.843 4.747 4.747 0 0 0-1.079-1.56 4.906 4.906 0 0 0-1.617-1.033 5.036 5.036 0 0 0-1.903-.346h-6.504v14.628h2.43v-5.23h3.33l3.374 5.23h2.639l-3.566-5.524a4.615 4.615 0 0 0 2.374-1.635 4.393 4.393 0 0 0 .894-2.688Zm-2.359-.057c0 1.526-1.15 2.593-2.795 2.593h-3.891V79.34h4.092c.35-.01.698.052 1.023.18.324.129.617.32.861.564.244.244.433.534.555.852.122.319.175.658.155.997Zm5.926-1.523c.889 0 1.595-.702 1.595-1.535v-.009c0-.833-.697-1.525-1.595-1.525-.888 0-1.594.701-1.594 1.534v.009c0 .833.696 1.525 1.594 1.525Zm0-.167c-.806 0-1.411-.614-1.411-1.36v-.008c0-.745.614-1.368 1.411-1.368.807 0 1.411.614 1.411 1.36v.008c0 .745-.614 1.368-1.411 1.368Zm-.595-.632h.256v-.56h.385l.403.56h.321l-.449-.596c.22-.061.394-.21.394-.464 0-.307-.266-.474-.596-.474h-.714v1.534Zm.256-.762v-.553h.431c.22 0 .357.088.357.272 0 .167-.128.28-.357.28h-.431Z"></path>
+					</svg>
+				</a>
+                <div class="footer__newsletter-container">
+                    <p class="faux-p-xs text-black-800">Sign up for Kardia news, updates, and other exclusive content—straight to your inbox.</p>
+                    <div class="footer__newsletter-form">
+                        <form action="https://cl.s12.exct.net/DEManager.aspx" name="subscribeForm" method="post">
+                            <input type="hidden" name="_clientID" value="526001161">
+                            <input type="hidden" name="_deExternalKey" value="8AA51E40-D344-46E6-BE9B-D1DEC58AE2BE">
+                            <input type="hidden" name="_action" value="add">
+                            <input type="hidden" name="_returnXML" value="0">
+                            <input type="hidden" name="_successURL" value="https://kardia.com/subscribe-success">
+                            <input type="hidden" name="_errorURL" value="https://cloud.kardia.alivecor.com/signup-error">
+                            <div class="visible-inputs">
+                                <input type="email" name="Email" id="Email" placeholder=" " required="required" class="text-ui-sm">
+                                <label for="Email">Enter email address</label>
+                                <button type="submit" value="Submit" class="text-ui-sm">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <p class="mt-s7 faux-p-xs">Share AliveCor. <a href="https://www.kardia.com/referral" class="underline">Refer a friend.</a></p>
+                <ul class="list-none flex flex-wrap gap-s4 mt-s7">
+                    <li class="block">
+                        <a aria-label="linke to instagram profile" class="text-primary-500 hover/focus:text-primary-900 transition-all duration-500 ease-in-out" href="https://www.instagram.com/alivecor/" rel="noopener" target="_blank">
+                          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3.802c2.67 0 2.986.01 4.04.058a5.52 5.52 0 0 1 1.857.345c.435.16.828.415 1.15.748.333.322.588.715.748 1.15a5.52 5.52 0 0 1 .345 1.856c.048 1.055.058 1.371.058 4.041 0 2.67-.01 2.986-.058 4.04a5.52 5.52 0 0 1-.345 1.857 3.313 3.313 0 0 1-1.898 1.899 5.52 5.52 0 0 1-1.856.344c-1.055.048-1.371.058-4.041.058-2.67 0-2.986-.01-4.04-.058a5.52 5.52 0 0 1-1.857-.345 3.09 3.09 0 0 1-1.15-.748 3.092 3.092 0 0 1-.748-1.15 5.52 5.52 0 0 1-.345-1.856c-.048-1.055-.058-1.371-.058-4.041 0-2.67.01-2.986.058-4.04a5.52 5.52 0 0 1 .345-1.857 3.09 3.09 0 0 1 .748-1.15 3.09 3.09 0 0 1 1.15-.748 5.52 5.52 0 0 1 1.856-.345C9.014 3.812 9.33 3.802 12 3.802zM12 2c-2.715 0-3.056.012-4.123.06a7.37 7.37 0 0 0-2.427.465 5.113 5.113 0 0 0-2.925 2.93 7.37 7.37 0 0 0-.465 2.427C2.012 8.944 2 9.285 2 12c0 2.716.012 3.056.06 4.123.017.83.174 1.65.465 2.427a5.113 5.113 0 0 0 2.93 2.925c.777.29 1.597.448 2.427.465 1.062.048 1.403.06 4.118.06 2.716 0 3.056-.012 4.123-.06a7.371 7.371 0 0 0 2.427-.465 5.114 5.114 0 0 0 2.925-2.93c.29-.777.448-1.597.465-2.427.048-1.062.06-1.402.06-4.118 0-2.715-.012-3.056-.06-4.123a7.371 7.371 0 0 0-.465-2.427 5.115 5.115 0 0 0-2.93-2.925 7.37 7.37 0 0 0-2.427-.465C15.056 2.012 14.716 2 12 2z" fill="currentColor"/><path d="M12 6.865a5.135 5.135 0 1 0 0 10.27 5.135 5.135 0 0 0 0-10.27zm0 8.469a3.334 3.334 0 1 1 0-6.668 3.334 3.334 0 0 1 0 6.668zm5.338-7.472a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4z" fill="currentColor"/></svg>
+                        </a>
+                    </li>
+                    <li class="block">
+                        <a aria-label="linke to facebook profile" class="text-primary-500 hover/focus:text-primary-900 transition-all duration-500 ease-in-out" href="https://www.facebook.com/AliveCor/" rel="noopener" target="_blank">
+                          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m9.518 22-.027-9.09H6V9.272h3.49V7c0-3.374 2.007-5 4.896-5 1.384 0 2.574.107 2.92.155v3.526l-2.004.001c-1.571 0-1.875.778-1.875 1.92v1.67H18l-1.745 3.637h-2.828V22H9.518z" fill="currentColor"/></svg>
+                        </a>
+                    </li>
+                    <li class="block">
+                        <a aria-label="linke to twitter profile" class="text-primary-500 hover/focus:text-primary-900 transition-all duration-500 ease-in-out" href="https://twitter.com/alivecor" rel="noopener" target="_blank">
+                          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 4.3c-.9.4-1.8.7-2.8.8 1-.6 1.8-1.6 2.2-2.7-1 .6-2 1-3.1 1.2-.9-1-2.2-1.6-3.6-1.6-2.7 0-4.9 2.2-4.9 4.9 0 .4 0 .8.1 1.1-4.2-.2-7.8-2.2-10.2-5.2-.5.8-.7 1.6-.7 2.5 0 1.7.9 3.2 2.2 4.1-.8 0-1.6-.2-2.2-.6v.1c0 2.4 1.7 4.4 3.9 4.8-.4.1-.8.2-1.3.2-.3 0-.6 0-.9-.1.6 2 2.4 3.4 4.6 3.4-1.7 1.3-3.8 2.1-6.1 2.1-.4 0-.8 0-1.2-.1 2.2 1.4 4.8 2.2 7.5 2.2 9.1 0 14-7.5 14-14v-.6c1-.7 1.8-1.6 2.5-2.5z" fill="currentColor"/></svg>
+                        </a>
+                    </li>
+                    <li class="block">
+                        <a aria-label="linke to linkedin profile" class="text-primary-500 hover/focus:text-primary-900 transition-all duration-500 ease-in-out" href="https://www.linkedin.com/company/alivecor/" rel="noopener" target="_blank">
+                          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.027 5.74c0 .96-.786 1.738-1.756 1.738S3.514 6.7 3.514 5.74 4.3 4 5.271 4c.97 0 1.756.78 1.756 1.74zm.015 3.13H3.5V20h3.542V8.87zm5.654 0h-3.52V20h3.52v-5.843c0-3.248 4.27-3.514 4.27 0V20H20.5v-7.048c0-5.481-6.32-5.282-7.804-2.583v-1.5z" fill="currentColor"/></svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <nav class="footer__nav-container">
+				<ul class="nav-footer list-none">
+					<li class="menu__item level--1  has-dropdown">
+						<a href="https://shop.alivecor.com/" rel="noopener"  class="menu__link flex items-center relative link-level--1">Products</a>
+						<div class="submenu-items-wrapper">
+						<div class="submenu-items-wrapper-int" id="footer-products-submenu">
+							<ul class="submenu-items level--1 list-none">
+							<li class="menu__item level--2">
+								<a href="https://shop.alivecor.com/kardiamobile-card" rel="noopener"  class="menu__link flex items-center relative link-level--2">KardiaMobile Card</a>
+							</li>
+							<li class="menu__item level--2">
+								<a href="https://shop.alivecor.com/kardiamobile6l" rel="noopener"  class="menu__link flex items-center relative link-level--2">KardiaMobile 6L</a>
+							</li>
+							<li class="menu__item level--2">
+								<a href="https://shop.alivecor.com/kardiamobile" rel="noopener"  class="menu__link flex items-center relative link-level--2">KardiaMobile</a>
+							</li>
+							<li class="menu__item level--2">
+								<a href="https://shop.alivecor.com/kardiacare" rel="noopener"  class="menu__link flex items-center relative link-level--2">KardiaCare</a>
+							</li>
+							<li class="menu__item level--2 last-item">
+								<a href="https://www.kardia.com/international" rel="noopener"  class="menu__link flex items-center relative link-level--2">International</a>
+							</li>
+							</ul>
+						</div>
+						</div>
+						<button aria-label="toggle submenu" aria-controls="footer-products-submenu" class="submenu-btn to-lg:hidden">
+						<svg class="share__icon w-icon-24 h-icon-24" role="presentation">
+							<use xlink:href="/assets/icons/24/arrow-sm-down.svg#icon-definition"></use>
+						</svg>
+						</button>
+					</li>
+					<li class="menu__item level--1  has-dropdown">
+						<a href="https://alivecor.zendesk.com/hc/en-us" rel="noopener"  class="menu__link flex items-center relative link-level--1">Support</a>
+						<div class="submenu-items-wrapper">
+						<div class="submenu-items-wrapper-int" id="support-footer-submenu">
+							<ul class="submenu-items level--1 list-none">
+							<li class="menu__item level--2">
+								<a href="https://alivecor.zendesk.com/hc/en-us" rel="noopener"  class="menu__link flex items-center relative link-level--2">FAQs</a>
+							</li>
+							<li class="menu__item level--2">
+								<a href="https://alivecor.zendesk.com/hc/en-us/articles/1500000462022" rel="noopener"  class="menu__link flex items-center relative link-level--2">User Manuals</a>
+							</li>
+							<li class="menu__item level--2">
+								<a href="https://alivecor.zendesk.com/hc/en-us/articles/1500000449521" rel="noopener"  class="menu__link flex items-center relative link-level--2">Compatibility</a>
+							</li>
+							<li class="menu__item level--2">
+								<a href="https://www.kardia.com/shipping" rel="noopener"  class="menu__link flex items-center relative link-level--2">Shipping</a>
+							</li>
+							<li class="menu__item level--2 last-item">
+								<a href="https://www.kardia.com/warranty" rel="noopener"  class="menu__link flex items-center relative link-level--2">Warranty</a>
+							</li>
+							</ul>
+						</div>
+						</div>
+						<button aria-label="toggle submenu" aria-controls="support-footer-submenu" class="submenu-btn to-lg:hidden">
+						<svg class="share__icon w-icon-24 h-icon-24" role="presentation">
+							<use xlink:href="/assets/icons/24/arrow-sm-down.svg#icon-definition"></use>
+						</svg>
+						</button>
+					</li>
+					<li class="menu__item level--1 last-item has-dropdown">
+						<a href="javascript:void(0)" rel="noopener"  class="menu__link flex items-center relative link-level--1">Legal</a>
+						<div class="submenu-items-wrapper">
+						<div class="submenu-items-wrapper-int" id="legal-footer-submenu">
+							<ul class="submenu-items level--1 list-none">
+							<li class="menu__item level--2">
+								<a href="https://www.kardia.com/privacy" rel="noopener"  class="menu__link flex items-center relative link-level--2">Privacy</a>
+							</li>
+							<li class="menu__item level--2">
+								<a href="https://www.kardia.com/tos" rel="noopener"  class="menu__link flex items-center relative link-level--2">Terms</a>
+							</li>
+							<li class="menu__item level--2">
+								<a href="https://www.kardia.com/security" rel="noopener"  class="menu__link flex items-center relative link-level--2">Security</a>
+							</li>
+							<li class="menu__item level--2">
+								<a href="https://www.kardia.com/accessibility" rel="noopener"  class="menu__link flex items-center relative link-level--2">Accessibility</a>
+							</li>
+							<li class="menu__item level--2 last-item">
+								<a href="https://www.kardia.com/telehealth-informed-consent" rel="noopener"  class="menu__link flex items-center relative link-level--2">Telehealth Informed Consent</a>
+							</li>
+							</ul>
+						</div>
+						</div>
+						<button aria-label="toggle submenu" aria-controls="legal-footer-submenu" class="submenu-btn to-lg:hidden">
+						<svg class="share__icon w-icon-24 h-icon-24" role="presentation">
+							<use xlink:href="/assets/icons/24/arrow-sm-down.svg#icon-definition"></use>
+						</svg>
+						</button>
+					</li>
+					<li class="menu__item level--1 last-item has-dropdown to-md:pt-[40px] md:pl-[40px] to-md:border-t-2 md:border-l-2 border-black-100 xl:pr-s11">
+						    <a href="https://www.alivecor.com" class="mb-s7 mt-[5px]">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="xMinYMid" viewBox="0 0 350 44" class="w-[110px]">
+                                    <path fill="#195C5D" d="M39.974 34.567c-1.183-3.005-2.517-6.15-3.9-9.623-1.385-3.475-2.832-6.784-4.228-10.004a1347.81 1347.81 0 0 0-4.354-9.928A7.844 7.844 0 0 0 24.976 1.6a6.043 6.043 0 0 0-6.543 0c-1.13.886-2 2.065-2.517 3.41a997.457 997.457 0 0 0-4.34 9.928 823.048 823.048 0 0 0-4.24 10.005 660.15 660.15 0 0 0-3.901 9.623 383.896 383.896 0 0 0-3.36 8.736L0 43.52h7.55v-.127c.427-1.268 1.006-2.815 1.698-4.666a294.66 294.66 0 0 1 1.912-4.97l.076-.216c.793-2.054 4.165-10.549 4.819-12.134a308.83 308.83 0 0 1 2.038-4.856c.692-1.598 1.334-3.107 1.976-4.54.641-1.432 1.12-2.535 1.598-3.524a264.1 264.1 0 0 1 1.598 3.525c.578 1.293 1.258 2.954 1.975 4.539.717 1.585 1.371 3.233 2.038 4.856.667 1.623 4.027 10.143 4.82 12.134l.087.216c.755 1.94 1.384 3.563 1.913 4.97.692 1.851 1.258 3.41 1.699 4.666v.127h7.549l-.076-.216c-.943-2.726-2.076-5.667-3.296-8.736ZM60.394.612H53.6v42.907h27.593v-6.441H60.394V.612Zm37.621 0h-6.618v42.907h6.618V.612Zm30.11 36.504L115.417.815l-.076-.203h-7.147l15.036 42.907h9.726L147.954 1.03l.151-.418h-7.021l-12.959 36.504Zm30.159 6.403h30.235v-6.441h-23.428V25.21h21.038v-6.302h-21.038V7.04h23.428V.612h-30.235v42.907ZM220.076 6.61h.1c2.749-.01 5.438.8 7.732 2.324a14.046 14.046 0 0 1 5.165 6.246l.113.241 6.543-1.864-.151-.33a21.254 21.254 0 0 0-8.414-10.024 21.009 21.009 0 0 0-12.648-3.15 21.552 21.552 0 0 0-13.152 5.943 21.853 21.853 0 0 0-6.527 12.95 22.37 22.37 0 0 0 .735 9.335c.9 3.024 2.43 5.82 4.487 8.2a21.407 21.407 0 0 0 7.273 5.415 21.254 21.254 0 0 0 8.844 1.902 20.712 20.712 0 0 0 11.668-3.57 20.95 20.95 0 0 0 7.684-9.54l.138-.33-6.605-1.8-.101.24a13.667 13.667 0 0 1-5.112 6.176 13.516 13.516 0 0 1-7.672 2.218c-8.392 0-14.721-6.568-14.721-15.215a15.685 15.685 0 0 1 1.103-6.043 15.574 15.574 0 0 1 3.339-5.14 14.277 14.277 0 0 1 4.674-3.118 14.198 14.198 0 0 1 5.505-1.067ZM271.437.18a21.621 21.621 0 0 0-12.135 3.595 21.87 21.87 0 0 0-8.096 9.793 22.06 22.06 0 0 0-1.318 12.676 21.963 21.963 0 0 0 5.907 11.271 21.688 21.688 0 0 0 11.132 6.05c4.224.861 8.606.437 12.59-1.217a21.773 21.773 0 0 0 9.788-8.073 22.03 22.03 0 0 0 3.673-12.197 21.936 21.936 0 0 0-6.283-15.431A21.598 21.598 0 0 0 271.437.18Zm14.671 21.898c0 8.635-6.442 15.393-14.671 15.393a14.21 14.21 0 0 1-5.931-1.24 14.306 14.306 0 0 1-4.89-3.604 16.01 16.01 0 0 1-3.211-5.838 16.085 16.085 0 0 1-.564-6.65 15.258 15.258 0 0 1 4.792-9.546 15.037 15.037 0 0 1 9.842-4.009h.226c8.078.165 14.407 6.974 14.407 15.494Zm49.322-7.443a14.043 14.043 0 0 0-1.05-5.405 13.93 13.93 0 0 0-3.044-4.575 13.826 13.826 0 0 0-4.563-3.03 13.75 13.75 0 0 0-5.372-1.013h-18.358v42.907h6.857V28.177h9.399l9.525 15.342h7.449l-10.066-16.205a13.035 13.035 0 0 0 6.701-4.796 13.207 13.207 0 0 0 2.522-7.883Zm-6.656-.165c0 4.476-3.247 7.608-7.889 7.608H309.9V6.863h11.551a7.097 7.097 0 0 1 2.886.53 7.196 7.196 0 0 1 3.998 4.154c.345.933.495 1.929.439 2.923ZM345.5 10c2.509 0 4.5-2.057 4.5-4.5v-.026A4.474 4.474 0 0 0 345.5 1c-2.509 0-4.5 2.057-4.5 4.5v.026A4.474 4.474 0 0 0 345.5 10Zm0-.489c-2.276 0-3.983-1.8-3.983-3.985V5.5c0-2.186 1.733-4.011 3.983-4.011 2.276 0 3.983 1.8 3.983 3.985V5.5c0 2.186-1.733 4.011-3.983 4.011Zm-1.681-1.851h.724V6.014h1.086l1.138 1.646h.905l-1.267-1.749c.621-.18 1.112-.617 1.112-1.362 0-.9-.75-1.389-1.681-1.389h-2.017v4.5Zm.724-2.237v-1.62h1.216c.62 0 1.008.257 1.008.797 0 .489-.362.823-1.008.823h-1.216Z"></path>
+                                </svg>
+                            </a>
+						<div class="submenu-items-wrapper">
+						<div class="submenu-items-wrapper-int">
+							<ul class="kardia-professional submenu-items level--1 list-none">
+							<li class="menu__item level--2">
+								<a href="https://alivecor.com/mission" rel="noopener"  class="menu__link flex items-center relative link-level--2">Mission</a>
+							</li>
+							<li class="menu__item level--2">
+								<a href="https://alivecor.com/leadership-team" rel="noopener"  class="menu__link flex items-center relative link-level--2">Leadership</a>
+							</li>
+							<li class="menu__item level--2">
+								<a href="https://alivecor.com/research" rel="noopener"  class="menu__link flex items-center relative link-level--2">Research</a>
+							</li>
+							<li class="menu__item level--2">
+								<a href="https://alivecor.com/press" rel="noopener"  class="menu__link flex items-center relative link-level--2">Newsroom</a>
+							</li>
+							<li class="menu__item level--2 last-item">
+								<a href="https://alivecor.com/careers" rel="noopener"  class="menu__link flex items-center relative link-level--2">Careers</a>
+							</li>
+							</ul>
+						</div>
+						</div>
+					</li>
+				</ul>
+            </nav>
+            <div class="footer__copyright">
+                <div class="footer__copyright-int">
+                    <p class="text-white faux-p-xs">©2022 AliveCor, Inc. All Rights Reserved. US Patent Nos 8.301.282, 8.509.862 and Patents Pending.
+                          AliveCor and Kardia are trademarks of AliveCor, Inc. in the United States and other countries.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+{% schema %}
+
+{
+    "name": "t:sections.footer.name",
+    "blocks": [
+        {
+            "type": "link_list",
+            "name": "t:sections.footer.blocks.link_list.name",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "heading",
+                    "default": "Quick links",
+                    "label": "t:sections.footer.blocks.link_list.settings.heading.label",
+                    "info": "t:sections.footer.blocks.link_list.settings.heading.info"
+                }, {
+                    "type": "link_list",
+                    "id": "menu",
+                    "default": "footer",
+                    "label": "t:sections.footer.blocks.link_list.settings.menu.label",
+                    "info": "t:sections.footer.blocks.link_list.settings.menu.info"
+                }
+            ]
+        }, {
+            "type": "text",
+            "name": "t:sections.footer.blocks.text.name",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "heading",
+                    "default": "Heading",
+                    "label": "t:sections.footer.blocks.text.settings.heading.label"
+                }, {
+                    "type": "richtext",
+                    "id": "subtext",
+                    "default": "<p>Share contact information, store details, and brand content with your customers.</p>",
+                    "label": "t:sections.footer.blocks.text.settings.subtext.label"
+                }
+            ]
+        }, {
+            "type": "image",
+            "name": "Image",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                }, {
+                    "type": "range",
+                    "id": "image_width",
+                    "min": 50,
+                    "max": 200,
+                    "step": 5,
+                    "unit": "px",
+                    "label": "Image width",
+                    "default": 100
+                }, {
+                    "type": "select",
+                    "id": "alignment",
+                    "label": "Image alignment on large screen",
+                    "options": [
+                        {
+                            "value": "",
+                            "label": "Left"
+                        }, {
+                            "value": "center",
+                            "label": "Center"
+                        }, {
+                            "value": "right",
+                            "label": "Right"
+                        }
+                    ],
+                    "default": "center"
+                }
+            ]
+        }
+    ],
+    "settings": [
+        {
+            "type": "select",
+            "id": "color_scheme",
+            "options": [
+                {
+                    "value": "accent-1",
+                    "label": "t:sections.footer.settings.color_scheme.options__1.label"
+                }, {
+                    "value": "accent-2",
+                    "label": "t:sections.footer.settings.color_scheme.options__2.label"
+                }, {
+                    "value": "background-1",
+                    "label": "t:sections.footer.settings.color_scheme.options__3.label"
+                }, {
+                    "value": "background-2",
+                    "label": "t:sections.footer.settings.color_scheme.options__4.label"
+                }, {
+                    "value": "inverse",
+                    "label": "t:sections.footer.settings.color_scheme.options__5.label"
+                }
+            ],
+            "default": "background-1",
+            "label": "t:sections.footer.settings.color_scheme.label"
+        }, {
+            "type": "header",
+            "content": "t:sections.footer.settings.header__1.content",
+            "info": "t:sections.footer.settings.header__1.info"
+        }, {
+            "type": "checkbox",
+            "id": "newsletter_enable",
+            "default": true,
+            "label": "t:sections.footer.settings.newsletter_enable.label"
+        }, {
+            "type": "text",
+            "id": "newsletter_heading",
+            "default": "Subscribe to our emails",
+            "label": "t:sections.footer.settings.newsletter_heading.label"
+        }, {
+            "type": "header",
+            "content": "t:sections.footer.settings.header__2.content",
+            "info": "t:sections.footer.settings.header__2.info"
+        }, {
+            "type": "checkbox",
+            "id": "show_social",
+            "default": false,
+            "label": "t:sections.footer.settings.show_social.label"
+        }, {
+            "type": "header",
+            "content": "t:sections.footer.settings.header__3.content",
+            "info": "t:sections.footer.settings.header__4.info"
+        }, {
+            "type": "checkbox",
+            "id": "enable_country_selector",
+            "default": true,
+            "label": "t:sections.footer.settings.enable_country_selector.label"
+        }, {
+            "type": "header",
+            "content": "t:sections.footer.settings.header__5.content",
+            "info": "t:sections.footer.settings.header__6.info"
+        }, {
+            "type": "checkbox",
+            "id": "enable_language_selector",
+            "default": true,
+            "label": "t:sections.footer.settings.enable_language_selector.label"
+        }, {
+            "type": "header",
+            "content": "t:sections.footer.settings.header__7.content"
+        }, {
+            "type": "checkbox",
+            "id": "payment_enable",
+            "default": true,
+            "label": "t:sections.footer.settings.payment_enable.label"
+        }, {
+            "type": "header",
+            "content": "t:sections.all.spacing"
+        }, {
+            "type": "range",
+            "id": "margin_top",
+            "min": 0,
+            "max": 100,
+            "step": 4,
+            "unit": "px",
+            "label": "t:sections.footer.settings.margin_top.label",
+            "default": 0
+        }, {
+            "type": "header",
+            "content": "t:sections.all.padding.section_padding_heading"
+        }, {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 100,
+            "step": 4,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_top",
+            "default": 36
+        }, {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 100,
+            "step": 4,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_bottom",
+            "default": 36
+        }
+    ],
+    "default": {
+        "blocks": [
+            {
+                "type": "link_list"
+            }, {
+                "type": "text"
+            }
+        ]
+    }
+}
+
+{% endschema %}

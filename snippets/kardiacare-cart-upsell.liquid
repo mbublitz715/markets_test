@@ -1,0 +1,177 @@
+{% if shop.domain == 'store.alivecor.co.uk' %}
+  <!-- UK -->
+<div class="pop-up kardiacare-upsell original" id="kardiacare-upsell-popup-original">
+  <div class="screen">
+  <div class="content">
+    <a class="pop-up-close ga-tracker"
+      id="kardiacare-upsell-close"
+      data-category="KardiaCare Cart Pop Up Upsell"
+      data-action="Clicked Close"
+      data-label="Cart"></a>
+    <div class="text kardiacare-table">
+      <div class="faux-p">Detect twice as many arrhythmias when you join KardiaCare</div>
+      <div class="upsell-table-cont">
+        {% include 'rhythm-table' %}
+      </div>
+      <div class="h3 subtitle">Just £99/year</div>
+      <a class="btn ga-tracker"
+        id="kardiacare-upsell-add"
+        data-category="KardiaCare Cart Pop Up Upsell"
+        data-action="Clicked Add to cart"
+        data-label="Cart">
+        Add KardiaCare
+      </a>
+      <a id="kardiacare-upsell-no"
+        class="upsell-no ga-tracker"
+        data-category="KardiaCare Cart Pop Up Upsell"
+        data-action="Clicked No thanks"
+        data-label="Cart">
+        No thanks
+      </a>
+    </div>
+  </div>
+  </div>
+</div>
+{% endif %}
+{% if shop.domain == 'store.kardia.com' %}
+<div class="w-full h-screen fixed inset-0 bg-black/70 justify-center items-center p-s4" onclick="this.style.display = 'none';" id="kc-modal-overlay" role="dialog" style="display: none; z-index: 99999;">
+    <div onclick="event.stopPropagation()" class="kc-upsell w-full max-w-text max-h-full overflow-scroll relative bg-white">
+
+        <button class="absolute top-s3 right-s2" aria-label="close dialog" id="kc-upsell-close-button" onclick="kcModalContinue()"><img alt="close" width="20" src="{{ 'modal-close.svg' | asset_url }}" /></button>
+
+        <h2 class="faux-h4 !font-semibold text-center text-black-600 py-s7 border-b-2 border-black-50 mx-s8">Choose Your Plan</h2>
+
+        <div class="flex kc-upsell">
+
+            <div class="space-y-s5 flex flex-col items-center text-center p-s8 sm:w-1/2 bg-gradient-to-t from-kc-75 to-white via-white">
+                <div class="flex flex-col">
+                    <h3 class="text-kc-400 leading-tight faux-h2 font-normal">KardiaCare<br>Membership</h3>
+                    <h4 class="text-kc-200 font-bold !mt-s6">$9.99/month</h4>
+                </div>
+                <p class="p-s4 !mt-s8 faux-p-sm text-kc-800 !items-start text-center"><span>For the person who wants our most advanced arrhythmia detection, and access to tools to help self-monitor and manage their heart health.</span></p>
+                <div class="text-kc-800 !items-start"><button onclick="addKcToCart()" class="rounded-[8px] px-s5 py-s3 btn btn-sm text-white faux-h4 bg-kc-500 text-[1rem] font-bold">Get Kardiacare</button></div>
+                <div class="sm:hidden"><button class="faux-p-xs text-black-800 underline pb-s2" onclick="kcModalContinue()">No thanks</button></div>
+            </div>
+
+            <div class="hidden sm:!flex space-y-s5 flex-col items-center text-center p-s8 sm:w-1/2 justify-between">
+                <div class="flex flex-col justify-center h-[105px]">
+                    <h3 class="text-tertiary-800 leading-tight faux-h2 font-normal">No Membership</h3>
+                </div>
+                <p class="p-s4 !mt-s8 faux-p-sm text-kc-800 !items-start text-center text-tertiary-800 flex-grow"><span>For the person who wants to detect and monitor basic arrhythmias.</span></p>
+                <div class="text-kc-800 !items-start"><button onclick="kcModalContinue()" aria-label="Continue without KardiaCare" class="rounded-[8px] px-s5 py-s3 btn btn-sm text-tertiary-800 faux-h4 bg-tertiary-100 text-[1rem] font-bold">Continue</button></div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<script>
+
+    let kcFrequency = 1
+    let kcVariantId = 32283254751297
+
+    // function toggleMonthly(monthly) {
+    //     if (monthly) {
+    //         kcFrequency = 1
+    //         kcVariantId = 32283254751297
+    //         document.getElementById('kcPriceDesktop').innerHTML = '9<span class=\\\'faux-p mt-s4\\\'>.99</span>'
+    //         document.querySelectorAll('[name=kc-interval]').forEach((el) => {
+    //             el.checked = el.value == 'month' ? true : false
+    //         })
+    //     } else {
+    //         kcFrequency = 12
+    //         kcVariantId = 32194082472001
+    //         document.getElementById('kcPriceDesktop').innerHTML = '99'
+    //         document.querySelectorAll('[name=kc-interval]').forEach((el) => {
+    //             el.checked = el.value == 'month' ? false : true
+    //         })
+    //     }
+    // }
+
+    function kcOpen() {
+        document.getElementById('kc-modal-overlay').style.display = 'flex';
+        document.getElementsByTagName('body')[0].className += ' overflow-hidden h-screen'
+        document.getElementById('kc-upsell-close-button').focus()
+    }
+
+    /*
+    The modalProduct is defined in the "add-to-cart" liquid file for each product
+    */
+
+    function addProductsToCart(products) {
+        $.ajax({
+            type: 'POST',
+            url: '/cart/add.js',
+            data: {
+                items: products,
+            },
+            dataType: 'json',
+            success: function () {
+                const promo = new URL(window.location.href).searchParams.get("promo")
+                if (promo) {
+                    if (promo == "freegift") {
+                        return
+                    } else {
+                        window.location.href = `/cart?promo=${promo}`
+                    }
+                } else {
+                    window.location.href = '/cart';
+                }
+            },
+        });
+    }
+
+    function kcModalContinue() {
+        let products = [{ quantity: 1, id: window.modalProduct }]
+        addProductsToCart(products)
+    }
+    function addKcToCart() {
+        console.log({ kcFrequency })
+      
+       const sellingPlansByVariantId = {
+            // yearly
+            32194082472001: 854982721,
+      
+            // monthly
+            32283254751297: 855015489
+        }
+        const sellingPlan = sellingPlansByVariantId[kcVariantId]
+      
+        let products = [
+            { quantity: 1, id: window.modalProduct },
+            {
+                quantity: 1,
+                id: kcVariantId,
+                selling_plan: sellingPlan,
+                properties: {
+                  shipping_interval_frequency: kcFrequency,
+                  shipping_interval_unit_type: "Months"
+                }
+            }
+        ]
+      
+        addProductsToCart(products)
+    }
+    function addKcpToCart() {
+        let km6l = 28007532101697
+        let modalProduct = { quantity: 1, id: window.modalProduct }
+        let kcp = { quantity: 1, id: 40291632349249, properties: { shipping_interval_frequency: 12, shipping_interval_unit_type: "Months" }}
+        if (window.modalProduct == km6l) addProductsToCart([kcp])
+        else addProductsToCart([modalProduct, kcp])
+    }
+</script>
+
+<style>
+    .kc-upsell > .kcp-options > * {
+        margin: 0px!important;
+        height: 100%;
+        display: flex;
+        text-align: center;
+        background: white;
+    }
+    .bg-black\/70 {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+</style>
+{% endif %}
