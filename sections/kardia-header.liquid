@@ -118,6 +118,11 @@
                                             <li class="menu__item level--2 last-item ">
                                                 <a class="menu__link flex items-center relative link-level--2 " href="https://www.kardia.com/professional/oems" rel="noopener" >For OEMs</a>
                                             </li>
+                                            {% if request.path | contains: 'en-it' %}
+                                                <li class="menu__item level--2 last-item ">
+                                                    <a class="menu__link flex items-center relative link-level--2 " href="https://www.kardia.com/professional/oems" rel="noopener" >Mama Mia</a>
+                                                </li>
+                                            {% else %}
                                         </ul>
                                     </div>
                                 </div>
