@@ -1,9 +1,18 @@
 {% schema %}
   {
-    "name": "Section name",
+    "name": "Resource hub",
     "settings": []
   }
 {% endschema %}
+
+{% assign urlSegments = request.path | split: '/' %}
+                                            
+{% for segment in urlSegments %}
+  {% if segment == 'en-gb' %}
+    <h1>Resources</h1>
+    
+  {% endif %}
+{% endfor %}
 
 {% stylesheet %}
 {% endstylesheet %}
