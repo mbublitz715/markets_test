@@ -18,13 +18,14 @@
   
 {% endstylesheet %}
 
+<div id="app">
 {% assign urlSegments = request.path | split: '/' %}
                                             
 {% for segment in urlSegments %}
   
   {% if segment == 'en-gb' or segment == 'en-ca' %}
     
-    <div id="app">
+    
       <section class ="page-width py-s12">
         <h1 class="pb-s5">Resources for GB and CA</h1>
         <div class="shopify-grid">
@@ -37,10 +38,10 @@
         </div>
         <p>Show up here</p>
       </section>
-    </div>
     
   {% endif %}
 {% endfor %}
+</div>
 
 {% javascript %}
 {% endjavascript %}
