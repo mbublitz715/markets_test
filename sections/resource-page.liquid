@@ -8,13 +8,31 @@
 {% assign urlSegments = request.path | split: '/' %}
                                             
 {% for segment in urlSegments %}
-  {% if segment == 'en-gb' %}
-    <h1>Resources</h1>
-    
+  {% if segment == 'en-gb' or segment == 'en-ca' %}
+    <h1>Resources for GB and CA</h1>
+    <div id="resource-video-section">
+      <div class = "placehold-video"></div>
+      <div class = "placehold-video"></div>
+      <div class = "placehold-video"></div>
+      <div class = "placehold-video"></div>
+      <div class = "placehold-video"></div>
+      <div class = "placehold-video"></div>
+    </div>
+
+  {% else %}
+    <p>This page does not exist for your region</p>
   {% endif %}
 {% endfor %}
 
 {% stylesheet %}
+  #resource-video-section{
+    display: flex;
+    justify-content: space-between;
+  }
+  .placehold-video{
+    width: 300px;
+    height: 200px;
+  }
 {% endstylesheet %}
 
 {% javascript %}
