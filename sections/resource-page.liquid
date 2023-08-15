@@ -5,23 +5,6 @@
   }
 {% endschema %}
 
-{% assign urlSegments = request.path | split: '/' %}
-                                            
-{% for segment in urlSegments %}
-  {% if segment == 'en-gb' or segment == 'en-ca' %}
-    <h1>Resources for GB and CA</h1>
-    <div id="resource-video-section">
-      <div class = "placehold-video"></div>
-      <div class = "placehold-video"></div>
-      <div class = "placehold-video"></div>
-      <div class = "placehold-video"></div>
-      <div class = "placehold-video"></div>
-      <div class = "placehold-video"></div>
-    </div>
-    <p>Show up here</p>
-  {% endif %}
-{% endfor %}
-
 {% stylesheet %}
   #resource-video-section{
     display: flex;
@@ -33,6 +16,27 @@
     background-color: grey;
   }
 {% endstylesheet %}
+
+{% assign urlSegments = request.path | split: '/' %}
+                                            
+{% for segment in urlSegments %}
+  
+  {% if segment == 'en-gb' or segment == 'en-ca' %}
+    <section class ="page-width">
+      <h1>Resources for GB and CA</h1>
+      <div id="resource-video-section">
+        <div class = "placehold-video"></div>
+        <div class = "placehold-video"></div>
+        <div class = "placehold-video"></div>
+        <div class = "placehold-video"></div>
+        <div class = "placehold-video"></div>
+        <div class = "placehold-video"></div>
+      </div>
+      <p>Show up here</p>
+    </section>
+    
+  {% endif %}
+{% endfor %}
 
 {% javascript %}
 {% endjavascript %}
