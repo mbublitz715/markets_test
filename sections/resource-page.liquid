@@ -23,18 +23,21 @@
 {% for segment in urlSegments %}
   
   {% if segment == 'en-gb' or segment == 'en-ca' %}
-    <section class ="page-width">
-      <h1>Resources for GB and CA</h1>
-      <div class="shopify-grid">
-        <div class = "placehold-video"><p>Video</p></div>
-        <div class = "placehold-video"><p>Video</p></div>
-        <div class = "placehold-video"><p>Video</p></div>
-        <div class = "placehold-video"><p>Video</p></div>
-        <div class = "placehold-video"><p>Video</p></div>
-        <div class = "placehold-video"><p>Video</p></div>
-      </div>
-      <p>Show up here</p>
-    </section>
+    
+    <div id="app">
+      <section class ="page-width py-s5">
+        <h1>Resources for GB and CA</h1>
+        <div class="shopify-grid">
+          <div class = "placehold-video"><p>Video</p></div>
+          <div class = "placehold-video"><p>Video</p></div>
+          <div class = "placehold-video"><p>Video</p></div>
+          <div class = "placehold-video"><p>Video</p></div>
+          <div class = "placehold-video"><p>Video</p></div>
+          <div class = "placehold-video"><p>Video</p></div>
+        </div>
+        <p>Show up here</p>
+      </section>
+    </div>
     
   {% endif %}
 {% endfor %}
