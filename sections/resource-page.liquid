@@ -15,14 +15,6 @@
     align-items: center;
     justify-content: center;
   }
-
-  {% assign urlSegments = request.path | split: '/' %}                                      
-  {% for segment in urlSegments %} 
-  {% if segment == 'en-ca' %}
-    .hideCanada{
-      display: none;
-    }
-  {% endif %}
   
 {% endstylesheet %}
 
