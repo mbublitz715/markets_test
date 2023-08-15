@@ -15,6 +15,14 @@
     align-items: center;
     justify-content: center;
   }
+
+  {% assign urlSegments = request.path | split: '/' %}                                      
+  {% for segment in urlSegments %} 
+  {% if segment == 'en-ca' %}
+    .hideCanada{
+      display: none;
+    }
+  {% endif %}
   
 {% endstylesheet %}
 
@@ -34,7 +42,7 @@
           <div class = "placehold-video"><p>Video</p></div>
           <div class = "placehold-video"><p>Video</p></div>
           <div class = "placehold-video"><p>Video</p></div>
-          <div class = "placehold-video"><p>Video</p></div>
+          <div class = "placehold-video hideCanada"><p>Video</p></div>
         </div>
         <p>Show up here</p>
       </section>
