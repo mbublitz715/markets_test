@@ -20,12 +20,12 @@
 
 <div id="app">
 {% assign urlSegments = request.path | split: '/' %}
-{% assign neededStore = FALSE %}
+{% assign neededStore = false %}
                                             
 {% for segment in urlSegments %}
   
   {% if segment == 'en-gb' or segment == 'en-ca' %}
-    {% assign neededStore = TRUE %}
+    {% assign neededStore = true%}
     
     
       <section class ="page-width py-s12">
@@ -42,7 +42,7 @@
       </section>
     
   {% endif %}
-  {% if neededStore == FALSE %}
+  {% if neededStore == false %}
     <h1>This page is not available in your region</h1>
   {% endif %}
 {% endfor %}
