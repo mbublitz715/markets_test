@@ -25,7 +25,7 @@
 {% for segment in urlSegments %}
   
   {% if segment == 'en-gb' or segment == 'en-ca' %}
-    neededStore = TRUE;
+    {% assign neededStore = TRUE %}
     
     
       <section class ="page-width py-s12">
