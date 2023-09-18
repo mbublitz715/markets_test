@@ -42,20 +42,18 @@ Check tags
     {% if tag == 'lateship' %}
   {% assign lateship = true %}
 {% endif %}
-{% endfor %}
+{% endfor %}<div class="home-grid-item w-full flex flex-col justify-between {{ product_name }} {{ product_collection }}"> {% comment %}
+  Link to your product with the 'within: collection' filter for the link to be aware of the collection.
+  This allows you to create collection-based navigation on the product page.
 
-  <div class="home-grid-item w-full flex flex-col justify-between {{ product_name }} {{ product_collection }}"> {% comment %}
-    Link to your product with the 'within: collection' filter for the link to be aware of the collection.
-    This allows you to create collection-based navigation on the product page.
+  Results of using 'within: collection':
+  - Instead of a URL with /products/product-handle
+  you would get /collections/collection-handle/products/product-handle
 
-    Results of using 'within: collection':
-    - Instead of a URL with /products/product-handle
-    you would get /collections/collection-handle/products/product-handle
+  For more info on navigation within a collection
+  - http://docs.shopify.com/support/your-store/collections/how-to-navigate-within-a-collection
 
-    For more info on navigation within a collection
-    - http://docs.shopify.com/support/your-store/collections/how-to-navigate-within-a-collection
-
-    {% endcomment %}{% assign home_grid_img_id = "home-grid-" | append: product.handle %}
+  {% endcomment %}{% assign home_grid_img_id = "home-grid-" | append: product.handle %}
   <a
     href="{% if product.handle =='kardiacare-monthly' %}/products/kardiacare{% else %}{{ product.url }}{% endif %}"
     class="grid__image"
