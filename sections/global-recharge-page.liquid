@@ -21,6 +21,21 @@
     background-color: white;
   }
 {% endstyle %}
+{% include 'domainDetect' %}
+
+{% if siteDomain == "UK" %}
+  {% assign kmYearlyPrice = "£81.00" %}
+  {% assign kmMonthlyPrice = "£9.00" %}
+{% elsif siteDomain == "CA" %}
+  {% assign kmYearlyPrice = "$135.00" %}
+  {% assign kmMonthlyPrice = "$14.00" %}
+{% elsif siteDomain == "AU" %}
+  {% assign kmYearlyPrice = "$156.00" %}
+  {% assign kmMonthlyPrice = "$16.00" %}
+{% else %}
+  {% assign kmYearlyPrice = "$99.99" %}
+  {% assign kmMonthlyPrice = "$9.99" %}
+{% endif %}
 
 <section class="w-full flex items-center customGradient py-s10">
   <div class="grid grid-cols-2 gap-s4 rechargePageWidth">
@@ -33,7 +48,7 @@
 
       <div class="flex flex-col gap-s6 pb-s10">
         <div class="flex gap-s4">
-          <h3 class="faux-h1 text-kc-800" id="kcPrice">$9.99</h3>
+          <h3 class="faux-h1 text-kc-800" id="kcPrice">$99.99</h3>
           <div class="flex flex-col">
             <p class="font-bold text-kc-800">Per</p>
             <p class="font-bold mt-s1 text-kc-800">Month</p>
@@ -42,7 +57,8 @@
 
         <div class="flex flex-col gap-s5 kardiacarePlan">
           <div class="flex mt-s6">
-            <label class="p-s2 justify-center !m-0 faux-h6 flex relative cursor-pointer w-1/2 kardiacarePlanLeft" onclick="kcFrequency = 12; kcVariantId = 32194082472001; document.getElementById('kcPrice').innerHTML='99'">
+            <label class="p-s2 justify-center !m-0 faux-h6 flex relative cursor-pointer w-1/2 kardiacarePlanLeft" onclick="kcFrequency = 12; kcVariantId = 32194082472001; document.getElementById('kcPrice').innerHTML='{{ kmYearlyPrice }}'">
+
               <input
                 type="radio"
                 name="kc-interval"
@@ -53,7 +69,7 @@
 
               <span class="peer-checked:text-white z-10 font-bold">Yearly</span>
             </label>
-            <label class="p-s2 justify-center !m-0 faux-h6 flex relative cursor-pointer w-1/2 kardiacarePlanRight" onclick="kcFrequency = 1; kcVariantId = 32283254751297; document.getElementById('kcPrice').innerHTML='9<span class=\\\'faux-p mt-s4\\\'>.99</span>'">
+            <label class="p-s2 justify-center !m-0 faux-h6 flex relative cursor-pointer w-1/2 kardiacarePlanRight" onclick="kcFrequency = 1; kcVariantId = 32283254751297; document.getElementById('kcPrice').innerHTML='9.99'">
               <input
                 type="radio"
                 name="kc-interval"
