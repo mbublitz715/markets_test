@@ -126,7 +126,7 @@
       <div class="country-dropdown">
         <div class="selected-country-option">
           <img src="{{ flagName | asset_url }}" />
-          <p>Australia</p>
+          <p>{{ currentCountry }}</p>
         </div>
         <ul class="country-options">
           <li data-value="au">
@@ -168,13 +168,13 @@
           <h3 class="faux-h1 text-kc-800" id="kcPrice">{{ kmYearlyPrice }}</h3>
           <div class="flex flex-col">
             <p class="font-bold text-kc-800">Per</p>
-            <p class="font-bold mt-s1 text-kc-800">Year</p>
+            <p id="planDuration" class="font-bold mt-s1 text-kc-800">Year</p>
           </div>
         </div>
 
         <div class="flex flex-col gap-s5 kardiacarePlan">
           <div class="flex mt-s6">
-            <label class="p-s2 justify-center !m-0 faux-h6 flex relative cursor-pointer w-1/2 kardiacarePlanLeft" onclick="kcFrequency = 12; kcVariantId = 32194082472001; document.getElementById('kcPrice').innerHTML='{{ kmYearlyPrice }}'">
+            <label class="p-s2 justify-center !m-0 faux-h6 flex relative cursor-pointer w-1/2 kardiacarePlanLeft" onclick="kcFrequency = 12; kcVariantId = 32194082472001; document.getElementById('kcPrice').innerHTML='{{ kmYearlyPrice }}'; document.getElementById('planDuration').innerHTML='Year'">
 
               <input
                 type="radio"
@@ -186,7 +186,7 @@
 
               <span class="peer-checked:text-white z-10 font-bold">Yearly</span>
             </label>
-            <label class="p-s2 justify-center !m-0 faux-h6 flex relative cursor-pointer w-1/2 kardiacarePlanRight" onclick="kcFrequency = 1; kcVariantId = 32283254751297; document.getElementById('kcPrice').innerHTML='{{ kmMonthlyPrice }}'">
+            <label class="p-s2 justify-center !m-0 faux-h6 flex relative cursor-pointer w-1/2 kardiacarePlanRight" onclick="kcFrequency = 1; kcVariantId = 32283254751297; document.getElementById('kcPrice').innerHTML='{{ kmMonthlyPrice }}'; document.getElementById('planDuration').innerHTML='Month'">
               <input
                 type="radio"
                 name="kc-interval"
