@@ -48,10 +48,10 @@
 
       <div class="flex flex-col gap-s6 pb-s10">
         <div class="flex gap-s4">
-          <h3 class="faux-h1 text-kc-800" id="kcPrice">$99.99</h3>
+          <h3 class="faux-h1 text-kc-800" id="kcPrice">{{ kmYearlyPrice }}</h3>
           <div class="flex flex-col">
             <p class="font-bold text-kc-800">Per</p>
-            <p class="font-bold mt-s1 text-kc-800">Month</p>
+            <p class="font-bold mt-s1 text-kc-800">Year</p>
           </div>
         </div>
 
@@ -69,7 +69,7 @@
 
               <span class="peer-checked:text-white z-10 font-bold">Yearly</span>
             </label>
-            <label class="p-s2 justify-center !m-0 faux-h6 flex relative cursor-pointer w-1/2 kardiacarePlanRight" onclick="kcFrequency = 1; kcVariantId = 32283254751297; document.getElementById('kcPrice').innerHTML='9.99'">
+            <label class="p-s2 justify-center !m-0 faux-h6 flex relative cursor-pointer w-1/2 kardiacarePlanRight" onclick="kcFrequency = 1; kcVariantId = 32283254751297; document.getElementById('kcPrice').innerHTML='{{ kmMonthlyPrice }}'">
               <input
                 type="radio"
                 name="kc-interval"
