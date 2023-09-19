@@ -1,0 +1,114 @@
+{% include 'domainDetect' %}
+
+{% if siteDomain == "UK" %}
+  {% assign currentCountry = "United Kingdom" %}
+  {% assign flagName = "flag-uk.svg" %}
+{% elsif siteDomain == "CA" %}
+  {% assign currentCountry = "Canada" %}
+  {% assign flagName = "flag-canada.svg" %}
+{% elsif siteDomain == "AU" %}
+  {% assign currentCountry = "Australia" %}
+  {% assign flagName = "flag-australia.svg" %}
+{% else %}
+  {% assign currentCountry = "Australia" %}
+  {% assign flagName = "flag-australia.svg" %}
+{% endif %}
+
+{% style %}
+  .country-dropdown {
+    position: relative;
+  }
+
+  .selected-country-option {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .country-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    list-style: none;
+    padding: 0;
+  }
+
+  .country-options li {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  .country-options li img,
+  .selected-country-option img {
+    position: relative;
+    height: 32px;
+    width: auto;
+  }
+
+  #country-selector-holder {
+    width: 100%;
+    padding: 4px 16px;
+    display: flex;
+    gap: 16px;
+    background-color: white;
+    border-radius: 8px;
+  }
+{% endstyle %}
+
+<div id="country-selector-holder">
+  <div class="country-dropdown">
+    <div class="selected-country-option">
+      <img src="{{ flagName | asset_url }}" /> Default
+    </div>
+    <ul class="country-options">
+      <li data-value="au">
+        <img src="{{ 'flag-australia'| asset_url }}" />
+        Australia
+      </li>
+      <li data-value="ca">
+        <img src="{{ 'flag-canada'| asset_url }}" />
+        Canada
+      </li>
+      <li data-value="gb">
+        <img src="{{ 'flag-gb'| asset_url }}" />
+        United Kingdom
+      </li>
+    </ul>
+  </div>
+
+  <p class="text-bold">
+    Not in located in {{ currentCountry }}? Please select another country</p>
+</div>
+
+<script>
+  const customDropdown = document.querySelector(".country-dropdown");
+  const selectedOption = customDropdown.querySelector(".selected-country-option");
+  const optionsList = customDropdown.querySelector(".country-options");
+
+  selectedOption.addEventListener("click", () => {
+    optionsList.classList.toggle("show-options");
+  });
+
+  optionsList.addEventListener("click", (e) => {
+    if (e.target.tagName === "LI") {
+      const selectedValue = e.target.getAttribute("data-value");
+      const selectedText = e.target.textContent;
+      const selectedFlag = e.target.querySelector("img").src;
+
+      selectedOption.innerHTML = `<img src="${selectedFlag}" alt="${selectedValue} Flag">${selectedText}`;
+      optionsList.classList.remove("show-options");
+
+// Use the selectedValue for further processing
+      console.log("Selected Value:", selectedValue);
+    }
+  });
+</script>
