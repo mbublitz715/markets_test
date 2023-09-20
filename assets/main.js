@@ -990,10 +990,10 @@ function kardiaCareCartAdd(kardiacare_id, frequency, unit) {
         type: 'POST',
         url: '/cart/add.js',
         data: {
-            quantity: 1,
-            id: kardiacare_id,
-            selling_plan: sellingPlan,
-            properties: {
+            'quantity': 1,
+            'id': kardiacare_id,
+            "selling_plan": sellingPlan,
+            "properties": {
                 "shipping_interval_frequency": frequency,
                 "shipping_interval_unit_type": unit
             }
@@ -1041,6 +1041,60 @@ function kcpAddToCart() {
         }
     });
 }
+
+function kcpAddToCartWorkaround(sellingPlan) {
+  
+  const productsToAdd = [
+    {
+      quantity: 1,
+      id: 40286929289281,
+      selling_plan: sellingPlan,
+      properties: { shipping_interval_frequency: 12, shipping_interval_unit_type: "Months" }
+    }, 
+    {
+      quantity: 1,
+      id: 28007532101697,
+    },
+    {
+      quantity: 1,
+      id: 31667890454593,
+    },
+  ];
+
+  // Function to add a single product to the cart
+  function addProductToCart(product) {
+    return new Promise((resolve, reject) => {
+      $.ajax({
+        type: 'POST',
+        url: '/cart/add.js',
+        data: product,
+        dataType: 'json',
+        success: resolve,
+        error: reject
+      });
+    });
+  }
+
+  // Function to add all products to the cart one by one in sequence
+  async function addProductsSequentially() {
+    for (const product of productsToAdd) {
+      try {
+        await addProductToCart(product);
+      } catch (error) {
+        console.error('Failed to add product to cart:', error);
+        // Handle the error and show an appropriate message to the user
+        return;
+      }
+    }
+    // All products added successfully, redirect to the cart
+    window.location.href = '/cart';
+  }
+
+  // Start adding products sequentially
+  addProductsSequentially();
+}
+
+
 
 function addToCartKardiaCare6lBundleEmailPromo(event, form) {
     var event = event || window.event;
