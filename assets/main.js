@@ -990,10 +990,10 @@ function kardiaCareCartAdd(kardiacare_id, frequency, unit) {
         type: 'POST',
         url: '/cart/add.js',
         data: {
-            'quantity': 1,
-            'id': kardiacare_id,
-            "selling_plan": sellingPlan,
-            "properties": {
+            quantity: 1,
+            id: kardiacare_id,
+            selling_plan: sellingPlan,
+            properties: {
                 "shipping_interval_frequency": frequency,
                 "shipping_interval_unit_type": unit
             }
