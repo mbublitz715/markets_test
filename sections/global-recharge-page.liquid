@@ -23,28 +23,6 @@
 {% endstyle %}
 {% include 'domainDetect' %}
 
-{% if siteDomain == "UK" %}
-  {% assign kmYearlyPrice = "£81.00" %}
-  {% assign kmMonthlyPrice = "£9.00" %}
-  {% assign currentCountry = "United Kingdom" %}
-  {% assign flagName = "flag-uk.svg" %}
-{% elsif siteDomain == "CA" %}
-  {% assign kmYearlyPrice = "$135.00" %}
-  {% assign kmMonthlyPrice = "$14.00" %}
-  {% assign currentCountry = "Canada" %}
-  {% assign flagName = "flag-canada.svg" %}
-{% elsif siteDomain == "AU" %}
-  {% assign kmYearlyPrice = "$156.00" %}
-  {% assign kmMonthlyPrice = "$16.00" %}
-  {% assign currentCountry = "Australia" %}
-  {% assign flagName = "flag-australia.svg" %}
-{% else %}
-  {% assign kmYearlyPrice = "$99.99" %}
-  {% assign kmMonthlyPrice = "$9.99" %}
-  {% assign currentCountry = "Australia" %}
-  {% assign flagName = "flag-australia.svg" %}
-{% endif %}
-
 <section class="w-full flex flex-col items-center customGradient py-s8 mb-s8">
   <div class="grid grid-cols-2 gap-s4 rechargePageWidth px-s5">
     <img src="{{ 'kardiacare-featured-opaque.png' | asset_url }}" class="col-start-1 col-span-1 w-full" />
