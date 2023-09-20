@@ -4575,6 +4575,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(153 153 153 / var(--tw-bg-opacity));
 }
 
+#app .bg-kc-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 211 227 / var(--tw-bg-opacity));
+}
+
 #app .bg-kc-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(136 96 166 / var(--tw-bg-opacity));

@@ -4,7 +4,7 @@
   }
   .rechargePageWidth {
     min-width: auto;
-    max-width: 1200px;
+    max-width: 1160px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -120,7 +120,7 @@
   {% assign flagName = "flag-australia.svg" %}
 {% endif %}
 
-<section class="w-full flex flex-col items-center customGradient py-s8">
+<section class="w-full flex flex-col items-center customGradient py-s8 mb-s8">
   <div id="country-selector-holder-wrapper">
     <div id="country-selector-holder">
       <div class="country-dropdown">
@@ -141,7 +141,7 @@
               <p>Canada</p>
             </a>
           </li>
-          <li data-value="gb">
+          <li data-value="gb" class="pb-s3">
             <a href="https://dev-alivecor-us.myshopify.com/en-gb/pages/global-recharge-page">
               <img src="{{ 'flag-uk.svg'| asset_url }}" />
               <p>United Kingdom</p>
@@ -155,7 +155,7 @@
 
   </div>
 
-  <div class="grid grid-cols-2 gap-s4 rechargePageWidth">
+  <div class="grid grid-cols-2 gap-s4 rechargePageWidth px-s5">
     <img src="{{ 'kardiacare-featured-opaque.png' | asset_url }}" class="col-start-1 col-span-1 w-full" />
     <div class="flex flex-col  w-full h-full justify-between pt-s4">
       <div>
