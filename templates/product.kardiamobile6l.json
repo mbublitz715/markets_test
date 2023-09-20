@@ -1,1 +1,149 @@
-{"sections":{"main":{"type":"kardiamobile6l-product","blocks":{"vendor":{"type":"text","disabled":true,"settings":{"text":"{{ product.vendor }}","text_style":"uppercase"}},"title":{"type":"title","settings":{}},"subtitle":{"type":"text","settings":{"text":"{{ product.metafields.descriptors.subtitle.value }}","text_style":"subtitle"}},"price":{"type":"price","settings":{}},"variant_picker":{"type":"variant_picker","settings":{"picker_type":"button"}},"buy_buttons":{"type":"buy_buttons","settings":{"show_dynamic_checkout":false}},"description":{"type":"description","settings":{}},"share":{"type":"share","settings":{"share_label":"Share"}}},"block_order":["vendor","title","subtitle","price","variant_picker","buy_buttons","description","share"],"settings":{"enable_sticky_info":true,"gallery_layout":"thumbnail_slider","media_size":"large","mobile_thumbnails":"hide","hide_variants":false,"enable_video_looping":false,"padding_top":36,"padding_bottom":36}},"icon-grid-6l":{"type":"icon-grid-6l","settings":{}},"what-is-section":{"type":"what-is-section","settings":{"image_url":"kardiamobile-6l-hand-holding-device.png","title":"What is KardiaMobile 6L?","content":"KardiaMobile 6L is the world’s only FDA-cleared, 6-lead personal EKG. Six leads means 6 times the heart data, giving you and your doctor the most detailed view of your heart you can get outside of a hospital. KardiaMobile 6L can detect AFib, Bradycardia, and Tachycardia, with more determinations available with a KardiaCare membership (such as Sinus Rhythm with PVCs, Sinus Rhythm with Wide QRS, and Sinus Rhythm with SVE)."}},"how-to-video-section":{"type":"how-to-video-section","settings":{"video_id":335613884,"title":"How to record an EKG with KardiaMobile 6L","subtitle":"Taking an EKG is easy with KardiaMobile 6L from AliveCor."}},"content-accurate":{"type":"content-accurate","settings":{}},"content-six-lead":{"type":"content-six-lead","settings":{}},"content-trust":{"type":"content-trust","settings":{}},"kardiacare-membership-module":{"type":"kardiacare-membership-module","settings":{}},"product-recommendations":{"type":"product-recommendations","settings":{"heading":"You may also like","heading_size":"h1","columns_desktop":4,"color_scheme":"background-1","image_ratio":"adapt","show_secondary_image":false,"show_vendor":false,"show_rating":false,"columns_mobile":"2","padding_top":36,"padding_bottom":36}},"additional-info-6l":{"type":"additional-info-6l","settings":{}},"device-info-module":{"type":"device-info-module","settings":{"highlighted_device":"km-6l"}}},"order":["main","icon-grid-6l","what-is-section","content-six-lead","content-trust","content-accurate","device-info-module","how-to-video-section","additional-info-6l","kardiacare-membership-module","product-recommendations"]}
+{
+    "sections": {
+        "main": {
+            "type": "kardiamobile6l-product",
+            "blocks": {
+                "vendor": {
+                    "type": "text",
+                    "disabled": true,
+                    "settings": {
+                        "text": "{{ product.vendor }}",
+                        "text_style": "uppercase"
+                    }
+                },
+                "title": {
+                    "type": "title",
+                    "settings": {}
+                },
+                "subtitle": {
+                    "type": "text",
+                    "settings": {
+                        "text": "{{ product.metafields.descriptors.subtitle.value }}",
+                        "text_style": "subtitle"
+                    }
+                },
+                "price": {
+                    "type": "price",
+                    "settings": {}
+                },
+                "variant_picker": {
+                    "type": "variant_picker",
+                    "settings": {
+                        "picker_type": "button"
+                    }
+                },
+                "buy_buttons": {
+                    "type": "buy_buttons",
+                    "settings": {
+                        "show_dynamic_checkout": false
+                    }
+                },
+                "description": {
+                    "type": "description",
+                    "settings": {}
+                },
+                "share": {
+                    "type": "share",
+                    "settings": {
+                        "share_label": "Share"
+                    }
+                }
+            },
+            "block_order": [
+                "vendor",
+                "title",
+                "subtitle",
+                "price",
+                "variant_picker",
+                "buy_buttons",
+                "description",
+                "share"
+            ],
+            "settings": {
+                "enable_sticky_info": true,
+                "gallery_layout": "thumbnail_slider",
+                "media_size": "large",
+                "mobile_thumbnails": "hide",
+                "hide_variants": false,
+                "enable_video_looping": false,
+                "padding_top": 36,
+                "padding_bottom": 36
+            }
+        },
+        "icon-grid-6l": {
+            "type": "icon-grid-6l",
+            "settings": {}
+        },
+        "what-is-section": {
+            "type": "what-is-section",
+            "settings": {
+                "image_url": "kardiamobile-6l-hand-holding-device.png",
+                "title": "What is KardiaMobile 6L?",
+                "content": "KardiaMobile 6L is the world’s only FDA-cleared, 6-lead personal EKG. Six leads means 6 times the heart data, giving you and your doctor the most detailed view of your heart you can get outside of a hospital. KardiaMobile 6L can detect AFib, Bradycardia, and Tachycardia, with more determinations available with a KardiaCare membership (such as Sinus Rhythm with PVCs, Sinus Rhythm with Wide QRS, and Sinus Rhythm with SVE)."
+            }
+        },
+        "how-to-video-section": {
+            "type": "how-to-video-section",
+            "settings": {
+                "video_id": 335613884,
+                "title": "How to record an EKG with KardiaMobile 6L",
+                "subtitle": "Taking an EKG is easy with KardiaMobile 6L from AliveCor."
+            }
+        },
+        "content-accurate": {
+            "type": "content-accurate",
+            "settings": {}
+        },
+        "content-six-lead": {
+            "type": "content-six-lead",
+            "settings": {}
+        },
+        "content-trust": {
+            "type": "content-trust",
+            "settings": {}
+        },
+        "kardiacare-membership-module": {
+            "type": "kardiacare-membership-module",
+            "settings": {}
+        },
+        "product-recommendations": {
+            "type": "product-recommendations",
+            "settings": {
+                "heading": "You may also like",
+                "heading_size": "h1",
+                "columns_desktop": 4,
+                "color_scheme": "background-1",
+                "image_ratio": "adapt",
+                "show_secondary_image": false,
+                "show_vendor": false,
+                "show_rating": false,
+                "columns_mobile": "2",
+                "padding_top": 36,
+                "padding_bottom": 36
+            }
+        },
+        "additional-info-6l": {
+            "type": "additional-info-6l",
+            "settings": {}
+        },
+        "device-info-module": {
+            "type": "device-info-module",
+            "settings": {
+                "highlighted_device": "km-6l"
+            }
+        }
+    },
+    "order": [
+        "main",
+        "icon-grid-6l",
+        "what-is-section",
+        "content-six-lead",
+        "content-trust",
+        "content-accurate",
+        "device-info-module",
+        "how-to-video-section",
+        "additional-info-6l",
+        "kardiacare-membership-module",
+        "product-recommendations"
+    ]
+}

@@ -3480,6 +3480,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   max-width: 768px;
 }
 
+#app .max-w-\[1152px\] {
+  max-width: 1152px;
+}
+
 #app .max-w-\[1400px\] {
   max-width: 1400px;
 }
