@@ -3480,10 +3480,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   max-width: 768px;
 }
 
-#app .max-w-\[1152px\] {
-  max-width: 1152px;
-}
-
 #app .max-w-\[1400px\] {
   max-width: 1400px;
 }
@@ -4577,6 +4573,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 #app .bg-black-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(153 153 153 / var(--tw-bg-opacity));
+}
+
+#app .bg-kc-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 211 227 / var(--tw-bg-opacity));
 }
 
 #app .bg-kc-500 {
